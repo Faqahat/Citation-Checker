@@ -13,13 +13,13 @@ const CheckFile = (file) =>
     const buffer = readChunk.sync(file, 0, fileType.minimumBytes);
     let type = fileType(buffer);
     if(type.ext == 'pdf') CheckCitations(file);
-    else console.log("FATAL ERROR :  Invalid File Type");
+    else console.error("FATAL ERROR :  Invalid File Type");
 }
 
 
 let CheckCitations = (file) => {
 
- 
+    Checkfile(file);
     let dataBuffer = fs.readFileSync(file);
  
     pdf(dataBuffer).then(function(data) {
